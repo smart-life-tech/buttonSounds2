@@ -172,7 +172,7 @@ void playTrack(uint8_t track, int button)
 {
   mp3.playStop();
   delay(200);
-  int file = mp3.queryFolderFiles(1);
+  int file = mp3.queryFile();
   Serial.print("track : ");
   Serial.println(track);
   Serial.print("file : ");
