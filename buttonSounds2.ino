@@ -59,6 +59,9 @@ void setup()
   mp3.setSynchronous(true);
   mp3.playFolderRepeat(PLAY_FOLDER);
   mp3.volume(mp3.volumeMax());
+  
+  // see if the mp3 is actively connected to the arduino 
+
 }
 void loop()
 {
@@ -168,6 +171,16 @@ void loop()
   }
 }
 
+/**
+ * Plays a specific track on an MP3 player.
+ *
+ * @param track The track number to play.
+ * @param button The button to check for interrupting the track.
+ *
+ * @return None.
+ *
+ * @throws None.
+ */
 void playTrack(uint8_t track, int button)
 {
   mp3.playStop();
