@@ -4,7 +4,7 @@
 #endif
 
 #include <MD_YX5300.h>
-#include <MD_cmdProcessor.h>
+#include <MD_cmdProcessor.h>//`https://github.com/MajicDesigns/MD_cmdProcessor`
 
 #if USE_SOFTWARESERIAL
 #include <SoftwareSerial.h>
