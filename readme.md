@@ -4,3 +4,7 @@ install this library
 read on how to structure your folder for the music to play here
 
 `https://majicdesigns.github.io/MD_YX5300/`
+
+and
+
+`https://github.com/MajicDesigns/MD_cmdProcessor`

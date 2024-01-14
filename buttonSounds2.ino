@@ -36,6 +36,12 @@ int loopState = LOOP_STATE_STOPPED;
 int count = 0;
 bool counter = false;
 
+
+void statusCallback(const int  data) {
+    Serial.print("Received status:");
+    Serial.println(data);
+    // Process the status data as needed
+}
 /*******************
     your setup code
  *******************/
@@ -52,20 +58,27 @@ void setup()
   pinMode(button4, INPUT_PULLUP);
   pinMode(button5, INPUT_PULLUP);
   pinMode(busyPin, INPUT);
-
+  // see if the mp3 is actively connected to the arduino
+  Serial.println("initializing mp3 player module");
   // initialize global libraries
+  Serial.println(mp3.queryEqualizer());
+  Serial.println(mp3.queryFile());
+  Serial.println(mp3.queryFilesCount());
+  Serial.println(mp3.queryFolderCount());
+  Serial.println(mp3.queryStatus());
+  Serial.println(mp3.queryVolume());
+  mp3.check();
+  mp3.getStatus();
   MP3Stream.begin(MD_YX5300::SERIAL_BPS);
   mp3.begin();
   mp3.setSynchronous(true);
   mp3.playFolderRepeat(PLAY_FOLDER);
   mp3.volume(mp3.volumeMax());
-  
-  // see if the mp3 is actively connected to the arduino 
-
 }
 void loop()
 {
   mp3.check(); // run the mp3 receiver
+  mp3.getStatus();
   while (digitalRead(button2) == LOW)
   {
     if (playing2 == 0)
