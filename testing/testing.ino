@@ -419,15 +419,15 @@ void handlerHelp(char *param)
 }
 
 void setup()
-{
+{// command line interface
+    Console.begin(57600);
     // YX5300 Serial interface
     MP3Stream.begin(MD_YX5300::SERIAL_BPS);
     mp3.begin();
     setCallbackMode(bUseCallback);
     setSynchMode(bUseSynch);
 
-    // command line interface
-    Console.begin(57600);
+    
     CP.begin();
     CP.help();
 }

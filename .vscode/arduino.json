@@ -1,4 +1,5 @@
 {
-    "board": "arduino:avr:uno",
-    "sketch": "testing\\testing.ino"
+    "board": "arduino:avr:nano",
+    "sketch": "testing\\testing.ino",
+    "configuration": "cpu=atmega328"
 }
